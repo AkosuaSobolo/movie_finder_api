@@ -172,9 +172,11 @@ b. Added a Top 3 favorites endpoint as well.
 ## Future Improvements
 
 1. User Authentication & Profiles: Manage personal favorites per user with JWT login
-2. User Reviews & Ratings: Allow comments or shared ratings per movie
+2. User Reviews: Allow comments per movie
 3. Caching Layer: Cache OMDb responses to avoid repeated API calls
 4. Recommendation Engine: Suggest similar movies based on user favorites
 5. Frontend UI: Build a React/Vue interface for easier interaction
 6. Testing & CI/CD: Add pytest unit tests and GitHub Actions for automation
 7. Deployment: Dockerize and deploy on Render/Railway for live demos
+8. Update Movies: Allow users to update their ratings or movie details in favorites
+9. Delete Movies: Allow users to remove movies from favorites 
