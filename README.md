@@ -6,10 +6,18 @@ A simple movie finder api
 
 This project is a simple **FastAPI + MongoDB** application where you can:
 
-1. Fetch movie details from the OMDb API
+1. Fetch movie details directly from the OMDb API
 2. Save movies as favorites in MongoDB
-3. List all saved movies with filters
+3. List all saved movies with filters and pagination
 4. Get the Top 3 favorite movies based on user's rating
+5. Built with FastAPI for speed and scalability
+
+# Tech Stack
+1. Backend Framework: FastAPI
+2. Database: MongoDB
+3. External API: OMDb API
+4. Environment Management: python-dotenv
+
 
 
 # How to Run
@@ -138,10 +146,21 @@ _json_
 # Error Handling.
  a. If OMDb API fails → returns **500 Internal Server Error
  b. If movie not found → returns **404 Not Found
- c. If movie already exists in favorites → returns HTTPException '409 Conflict'
+ c. If movie already exists in favorites → returns HTTPException '409 Conflict'(movie already exists in database)
 
 
 
 # Extra Challenge.
 a. Implemented filtering, skip, and limit (pagination) for `/movies`
 b. Added a Top 3 favorites endpoint as well.
+
+Future Improvements
+1.	User Authentication & Profiles: manage personal favorites per user with JWT login
+2.	User Reviews & Ratings:  allow comments or shared ratings per movie
+3.	Caching Layer:  cache OMDb responses to avoid repeated API calls
+4.	Recommendation Engine:  suggest similar movies based on user favorites
+5.	Frontend UI: build a React/Vue interface for easier interaction
+6.	Testing & CI/CD: add pytest unit tests and GitHub Actions for automation
+7.	Deployment: dockerize and deploy on Render/Railway for live demos
+
+
