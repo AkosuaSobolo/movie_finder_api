@@ -110,7 +110,7 @@ _json_
   }
 ]
 
-# 4. Get Top 3 favorites based on user's rating
+# Get Top 3 favorites based on user's rating
 
 `GET /movies/favorites`
 
@@ -153,6 +153,8 @@ _json_
 # Extra Challenge.
 a. Implemented filtering, skip, and limit (pagination) for `/movies`
 b. Added a Top 3 favorites endpoint as well.
+
+
 
 Future Improvements
 1.	User Authentication & Profiles: manage personal favorites per user with JWT login
