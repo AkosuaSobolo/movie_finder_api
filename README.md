@@ -3,7 +3,7 @@ A simple movie finder api
 
 # FastAPI + MongoDB Movie Favorites App
 
-This project is a simple **FastAPI + MongoDB** application where you can:
+This project is a simple FastAPI + MongoDB application where you can:
 
 1. Fetch movie details directly from the OMDb API
 2. Save movies as favorites in MongoDB
@@ -21,15 +21,11 @@ This project is a simple **FastAPI + MongoDB** application where you can:
 
 1. Clone/download this project  
 2. Install dependencies: pip install requirements.txt  
-3. Set up `.env` file in the project root:
-
-```
+3. Set up .env file in the project root:
 
 OMDB_API_KEY=your_api_key_here
 OMDB_URL=http://www.omdbapi.com/
 MONGO_URI=mongodb://localhost:27017
-
-````
 
 4. Start the server: fastapi dev
     
@@ -39,35 +35,29 @@ MONGO_URI=mongodb://localhost:27017
 
 ### Search a movie by title (from OMDb API)
 
-`GET /movies/search/{title}`
+GET /movies/search/{title}
 
-**Example request:**
+Example request:
 
 GET /movies/search/Inception
 
-**Example response:**
+Example response:
 
-_json_
-```json
+json
 {
   "title": "Inception",
   "year": "2010",
   "genre": "Action, Adventure, Sci-Fi",
   "imdbID": "tt1375666"
 }
-````
-
----
 
 ### Save a movie to favorites
 
-`POST /movies`
+POST /movies
 
-**Request (form-data):**
+Request (form-data):
 
-*json*
-
-```json
+json
 {
   "title": "Inception",
   "genre": "Action, Adventure, Sci-Fi",
@@ -75,33 +65,25 @@ _json_
   "imdbID": "tt1375666",
   "user_rating": 9.5
 }
-```
 
-**Response:**
+Response:
 
-*json*
-
-```json
+json
 {
   "message": "Movie successfully saved!"
 }
-```
-
----
 
 ### Get all saved movies (with filters & pagination)
 
-`GET /movies?title=&genre=&limit=5&skip=0`
+GET /movies?title=&genre=&limit=5&skip=0
 
-**Example request:**
+Example request:
 
-`GET /movies?genre=Action&limit=2`
+GET /movies?genre=Action&limit=2
 
-**Example response:**
+Example response:
 
-*json*
-
-```json
+json
 [
   {
     "title": "Inception",
@@ -118,19 +100,14 @@ _json_
     "user_rating": 9.0
   }
 ]
-```
-
----
 
 ### Get Top 3 favorites based on user's rating
 
-`GET /movies/favorites`
+GET /movies/favorites
 
-**Example response:**
+Example response:
 
-*json*
-
-```json
+json
 [
   {
     "title": "Inception",
@@ -154,19 +131,16 @@ _json_
     "user_rating": 8.8
   }
 ]
-```
-
----
 
 ## Error Handling
 
-a. If OMDb API fails → returns **500 Internal Server Error**
-b. If movie not found → returns **404 Not Found**
-c. If movie already exists in favorites → returns **409 Conflict** (movie already exists in database)
+a. If OMDb API fails: returns 500 Internal Server Error
+b. If movie not found: returns 404 Not Found
+c. If movie already exists in favorites: returns 409 Conflict (movie already exists in database)
 
 ## Extra Challenge
 
-a. Implemented filtering, skip, and limit (pagination) for `/all saved movies`
+a. Implemented filtering, skip, and limit (pagination) for all saved movies
 b. Added a Top 3 favorites endpoint as well.
 
 ## Future Improvements
